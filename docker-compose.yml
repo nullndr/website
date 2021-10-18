@@ -1,0 +1,12 @@
+version '3'
+volumes:
+services:
+  nginx:
+    build: ./nginx/Dockerfile 
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /srv/web/websiteUnderMaintenance/cert:/data/cert:ro
+      - /srv/web/websiteUnderMaintenance/public_html:/data/yaaaw/public_html:ro
+    restart: always   
