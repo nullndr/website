@@ -1,12 +1,11 @@
-version: '3'
-volumes:
+version: '3.9'
 services:
   nginx:
-    build: ./nginx/Dockerfile 
+    build: /data/web/sites/nullWebsite/nginx/ 
     ports:
       - 80:80
       - 443:443
     volumes:
-      - /srv/web/websiteUnderMaintenance/cert:/data/cert:ro
-      - /srv/web/websiteUnderMaintenance/public_html:/data/yaaaw/public_html:ro
-    restart: always   
+      - /data/web/sites/nullWebsite/cert:/data/cert:ro
+      - /data/web/sites/nullWebsite/html:/data/html:ro
+    restart: unless-stopped
