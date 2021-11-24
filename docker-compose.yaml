@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  nginx_proxy_manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443' 
+    environment:
+      DISABLE_IPV6: 'true'    
+    volumes:
+      - /srv/web/sites/nginx_proxy_manager/data:/data
+      - /srv/web/sites/nginx_proxy_manager/letsencrypt:/etc/letsencrypt
+  null_site:
+    build: /srv/web/sites/nullWebsite/nginx
+    image: null_site
+    container_name: null_site
+    restart: unless-stopped
+    ports:
+      - '82:80'
+      - '444:443'
+    volumes:
+      - /srv/web/sites/nullWebsite/html:/data/html:ro
+  portainer:
+    image: 'cr.portainer.io/portainer/portainer-ce:latest'
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - '9443:9443'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /srv/web/sites/portainer/portainer_data:/data:rw
+  cloud:
+    image: nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - '8000:80'
+    volumes:
+      - /srv/web/sites/nextcloud:/var/www/html
+networks:
+  default:
+    external:
+      name: milkyway-network
