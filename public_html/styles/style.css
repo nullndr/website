@@ -1,0 +1,49 @@
+
+* {}
+
+body {
+  background-color: #1b263b;
+
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+#container {
+  display: block;
+}
+
+#hello-world {
+  color: #e0e1dd;
+  font-size: 7vh;
+  font-family: 'Fira Mono', monospace;
+  letter-spacing: -7px;
+  -moz-text-size-adjust: auto;
+}
+
+#pipe {
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate{
+  from, 49.9% { opacity: 0; }
+  to, 50% { opacity: 1; }
+}
+
+#links-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#links-nav > a {
+  padding: 5px;
+}
+
+.social-icon {
+  max-height: 32px;
+  max-width: 32px;
+}
