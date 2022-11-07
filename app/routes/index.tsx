@@ -27,7 +27,7 @@ const socials: SocialIconProps[] = [
     src: "/assets/email.png",
   },
   {
-    href: "https://www.linkedin.com/in/andrea-foletto-5457b5187/",
+    href: "https://www.linkedin.com/in/nullndr/",
     alt: "Linkedin",
     src: "/assets/linkedin.png",
   },
