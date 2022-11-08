@@ -1,42 +1,14 @@
-import { SocialIcon, SocialIconProps } from "~/components/SocialIcon";
-
-const socials: SocialIconProps[] = [
-  {
-    href: "https://t.me/nullndr",
-    alt: "Telegram",
-    src: "/assets/telegram.png",
-  },
-  {
-    href: "https://gitlab.com/nullndr",
-    alt: "GitLab",
-    src: "/assets/gitlab.png",
-  },
-  {
-    href: "https://github.com/nullndr",
-    alt: "GitHub",
-    src: "/assets/github.png",
-  },
-  {
-    href: "https://twitter.com/nullndr",
-    alt: "Twitter",
-    src: "/assets/twitter.png",
-  },
-  {
-    href: "mailto: andrea@yaaaw.it",
-    alt: "Email",
-    src: "/assets/email.png",
-  },
-  {
-    href: "https://www.linkedin.com/in/nullndr/",
-    alt: "Linkedin",
-    src: "/assets/linkedin.png",
-  },
-  {
-    href: "/assets/pgpkey.pub",
-    alt: "GPG key",
-    src: "/assets/key.png",
-  },
-];
+import { IconContext } from "react-icons";
+import {
+  FaGithub,
+  FaGitlab,
+  FaKey,
+  FaLinkedin,
+  FaMastodon,
+  FaTelegramPlane,
+  FaTwitter,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Index() {
   return (
@@ -49,14 +21,37 @@ export default function Index() {
       </div>
       <div>
         <nav className={"flex justify-center flex-wrap"}>
-          {socials.map((social) => (
-            <SocialIcon
-              href={social.href}
-              alt={social.alt}
-              src={social.src}
-              key={social.href}
-            />
-          ))}
+          <IconContext.Provider
+            value={{
+              color: "yellow",
+              size: "3em",
+            }}
+          >
+            <a rel="me" href="https://mastodon.uno/@nullndr" className="p-2">
+              <FaMastodon />
+            </a>
+            <a href="https://t.me/nullndr" className="p-2">
+              <FaTelegramPlane />
+            </a>
+            <a href="https://gitlab.com/nullndr" className="p-2">
+              <FaGitlab />
+            </a>
+            <a href="https://github.com/nullndr" className="p-2">
+              <FaGithub />
+            </a>
+            <a href="https://twitter.com/nullndr" className="p-2">
+              <FaTwitter />
+            </a>
+            <a href="mailto: nullndr@duck.com" className="p-2">
+              <MdEmail />
+            </a>
+            <a href="https://linkedin.com/in/nullndr" className="p-2">
+              <FaLinkedin />
+            </a>
+            <a href="/assets/pgpkey.pub" className="p-2">
+              <FaKey />
+            </a>
+          </IconContext.Provider>
         </nav>
       </div>
     </div>
