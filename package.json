@@ -8,26 +8,25 @@
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -o ./app/styles.css",
     "dev": "concurrently -p \"[{name}]\" -n \"tailwind,remix\" -c \"yellow.bold,red.bold\" \"npm:dev:css\" \"npm:dev:remix\"",
-    "dev:remix": "cross-env NODE_ENV=development remix dev",
+    "dev:remix": "remix dev",
     "dev:css": "tailwindcss -o ./app/styles.css --watch",
     "start": "remix-serve build"
   },
   "dependencies": {
     "@remix-run/node": "^1.11.0",
-    "@remix-run/react": "^1.6.7",
+    "@remix-run/react": "^1.11.0",
     "@remix-run/serve": "^1.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.10.0",
-    "@remix-run/eslint-config": "^1.6.7",
+    "@remix-run/dev": "^1.11.0",
+    "@remix-run/eslint-config": "^1.11.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.10",
     "autoprefixer": "^10.4.8",
     "concurrently": "^7.3.0",
-    "cross-env": "^7.0.3",
     "eslint": "^8.21.0",
     "nodemon": "^2.0.19",
     "postcss": "^8.4.21",
