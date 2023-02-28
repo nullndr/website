@@ -44,7 +44,7 @@ export default function Index() {
           <a href="https://linkedin.com/in/nullndr" className="p-2">
             <FaLinkedin color="yellow" size="3em" />
           </a>
-          <a href="/assets/pgpkey.pub" className="p-2">
+          <a href="/key.pub" download={true} className="p-2">
             <FaKey color="yellow" size="3em" />
           </a>
         </nav>
