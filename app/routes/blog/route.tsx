@@ -39,7 +39,7 @@ export default function () {
           <div className="text-[#ffff00] font-bold">
             I haven't post anything yet! So here's a pic of my cat
           </div>
-          <img src="/cat.jpg" />
+          <img src="/cat.jpg" className="rounded" />
         </div>
       )}
     </div>
