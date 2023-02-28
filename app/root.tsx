@@ -1,5 +1,6 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -7,44 +8,56 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "./styles.css";
+import stylesheet from "~/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Nullndr",
+  title: "nullndr",
   viewport: "width=device-width,initial-scale=1",
 });
 
-export function links() {
-  return [
-    {
-      rel: "stylesheet",
-      href: styles,
-    },
-    {
-      rel: "icon",
-      href: "/assets/favicon.png",
-      type: "image/png",
-    },
-  ];
-}
-
 export default function App() {
   return (
-    <html lang="en" className={"h-full bg-white"}>
+    <html lang="en">
       <head>
         <Meta />
         <Links />
       </head>
-      <body
-        className={
-          "flex bg-[#202020] flex-col items-center justify-around justify-items-center w-[100vw] h-[100vh]"
-        }
-      >
+      <body className="bg-[#202020] text-[#d6d6d6] font-['monospace']">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+
+export function CatchBoundary() {
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body className="bg-[#202020] text-[#d6d6d6] font-['monospace']">
+        <div className="flex flex-col items-center justify-around h-[100vh]">
+          <div>
+            <div className="text-center text-[#ffff00] text-[10vw] font-bold">
+              404
+            </div>
+            <div className="font-bold">Where do you think you are going?</div>
+            <div className="text-center">
+              <Link to="/" className="hover:text-[#e6c2bf]">
+                Home
+              </Link>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );
