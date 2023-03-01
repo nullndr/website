@@ -1,3 +1,4 @@
+import codeHikeStyle from "@code-hike/mdx/dist/index.css";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Link,
@@ -12,6 +13,7 @@ import stylesheet from "~/tailwind.css";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
+  { rel: "stylesheet", href: codeHikeStyle },
 ];
 
 export const meta: MetaFunction = () => ({

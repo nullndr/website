@@ -1,5 +1,10 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/routes/blog_.$id.tsx"],
+  "include": [
+    "remix.env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/routes/blog_.$id.tsx"
+  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "isolatedModules": true,
@@ -15,6 +20,7 @@
     "paths": {
       "~/*": ["./app/*"]
     },
+    "module": "ES2022",
 
     // Remix takes care of building everything in `remix build`.
     "noEmit": true
