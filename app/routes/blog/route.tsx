@@ -2,7 +2,6 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { findPosts } from "~/models/posts.server";
 import { EmptyState } from "./EmptyState";
 import { Post } from "./Post";
-import { PostsWrapper } from "./PostsWrapper";
 
 export const loader = async () => {
   return findPosts();
@@ -19,11 +18,11 @@ export default function () {
         <span>Here I blog about whatever get my attention</span>
       </div>
       {posts.length > 0 ? (
-        <PostsWrapper>
-          {posts.map((post) => (
-            <Post {...post} />
+        <div className="mt-5 px-10 w-max">
+          {posts.map((post, i) => (
+            <Post {...post} key={i} />
           ))}
-        </PostsWrapper>
+        </div>
       ) : (
         <EmptyState />
       )}

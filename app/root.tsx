@@ -64,3 +64,28 @@ export function CatchBoundary() {
     </html>
   );
 }
+
+export function ErrorBoundary() {
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+      </head>
+      <body className="bg-[#202020] text-[#d6d6d6] font-['monospace']">
+        <div className="flex flex-col items-center justify-around h-[100vh]">
+          <div>
+            <div className="text-center text-[#ffff00] text-[10vw] font-bold">
+              Something bad happened
+            </div>
+            <div className="text-center">
+              <Link to="/" className="hover:text-[#e6c2bf]">
+                Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  );
+}
