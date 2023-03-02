@@ -15,6 +15,7 @@ model Post {
   title       String
   description String?
   path        String
+  isPublic    Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
