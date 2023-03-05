@@ -48,7 +48,7 @@ export default function Index() {
           </IconContext.Provider>
         </nav>
         <div className="pt-5 flex flex-col items-center text-xl">
-          <Link to="/blog" className="hover:text-[#e6c2bf]">
+          <Link to="/blog" className="hover:text-[#e6c2bf] font-bold">
             Blog
           </Link>
         </div>

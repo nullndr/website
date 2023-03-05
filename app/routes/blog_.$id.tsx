@@ -24,13 +24,16 @@ export default function () {
   const { post, code } = useLoaderData<typeof loader>();
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
   return (
-    <div className="m-5 h-max flex flex-col items-center">
-      <div className="hover:text-[#e6c2bf] text-xl">
+    <div className="h-fit w-full flex flex-col items-center">
+      <div className="mt-5 hover:text-[#e6c2bf] text-xl font-bold">
         <Link to="/blog">Go back</Link>
       </div>
       <div className="mt-5 text-[#ffff00] text-3xl font-bold">{post.title}</div>
-      <div className="mt-10 lg:w-1/3">
+      <div className="m-3 lg:w-1/3 prose dark:prose-invert prose-a:no-underline prose-a:font-bold">
         <Component />
+      </div>
+      <div className="mt-5 mb-5 hover:text-[#e6c2bf] text-xl font-bold">
+        <Link to="/blog">Go back</Link>
       </div>
     </div>
   );
