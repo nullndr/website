@@ -13,7 +13,7 @@ export function Post({ title, description, id, createdAt }: PostProps) {
       <div className="p-5 border-gray-600 border-2 rounded-lg">
         <Link to={id}>
           <div className="text-center font-bold">
-            <span className="text-[#ffff00] hover:text-[#e6c2bf] text-2xl">
+            <span className="text-[#ffff00] hover:text-[#e6c2bf] md:text-2xl">
               {title}
             </span>
             <span className="ml-2">{`(${new Date(
@@ -21,7 +21,7 @@ export function Post({ title, description, id, createdAt }: PostProps) {
             ).toLocaleDateString()})`}</span>
           </div>
           {description && (
-            <div className="mt-5 italic text-xl max-w-3xl text-center">
+            <div className="mt-5 italic md:text-xl max-w-3xl text-center">
               {description}
             </div>
           )}
