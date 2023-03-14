@@ -3,7 +3,7 @@
     "remix.env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/routes/blog.$id.tsx"
+    "app/routes/blog.$name.tsx"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],

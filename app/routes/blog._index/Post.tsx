@@ -1,23 +1,23 @@
 import { Link } from "@remix-run/react";
 
 type PostProps = {
-  id: string;
+  filename: string;
   title: string;
-  createdAt: string;
+  publishedAt: string;
   description: string | null;
 };
 
-export function Post({ title, description, id, createdAt }: PostProps) {
+export function Post({ title, description, filename, publishedAt }: PostProps) {
   return (
     <div className="mx-5 md:mx-0 md:w-1/2 lg:w-1/3">
       <div className="p-5 border-gray-600 border-2 rounded-lg">
-        <Link to={id}>
+        <Link to={filename}>
           <div className="text-center font-bold">
             <span className="text-[#ffff00] hover:text-[#e6c2bf] md:text-2xl">
               {title}
             </span>
             <span className="ml-2">{`(${new Date(
-              createdAt
+              publishedAt
             ).toLocaleDateString()})`}</span>
           </div>
           {description && (

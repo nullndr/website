@@ -1,5 +1,5 @@
 import { Link, Outlet } from "@remix-run/react";
-import { useMatch } from "~/hooks/useMatch";
+import { useMatch } from "./useMatch";
 
 export default function () {
   const { handle } = useMatch();
