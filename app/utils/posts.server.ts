@@ -6,15 +6,17 @@ import codeHikeTheme from "shiki/themes/one-dark-pro.json";
 type FrontMatter = {
   title: string;
   description: string;
-  publishedAt: string;
+  published: string;
 };
 
 export const getMdxFile = async (file: string) => {
   return bundleMDX<FrontMatter>({
     source: (await readFile(`./posts/${file}.mdx`)).toString(),
-    mdxOptions() {
+    mdxOptions(options) {
       return {
+        rehypePlugins: [...(options.rehypePlugins ?? [])],
         remarkPlugins: [
+          ...(options.remarkPlugins ?? []),
           [
             remarkCodeHike,
             {
@@ -36,7 +38,7 @@ export const findPosts = async () => {
     filename: string;
   })[] = [];
   for (const file of files.filter((file) => file.endsWith(".mdx"))) {
-    const { frontmatter } = await bundleMDX({
+    const { frontmatter } = await bundleMDX<FrontMatter>({
       source: (await readFile(`./posts/${file}`)).toString(),
       mdxOptions() {
         return {
@@ -59,11 +61,11 @@ export const findPosts = async () => {
       filename: file.replace(".mdx", ""),
       description: frontmatter.description,
       title: frontmatter.title,
-      publishedAt: frontmatter.publishedAt,
+      published: frontmatter.published,
     });
   }
 
   return posts.sort((a, b) =>
-    new Date(a.publishedAt) > new Date(b.publishedAt) ? -1 : 1
+    new Date(a.published) > new Date(b.published) ? -1 : 1
   );
 };
