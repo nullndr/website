@@ -29,7 +29,7 @@ export default function () {
   return (
     <>
       <Title>{title}</Title>
-      <div className="m-3 mt-10 xl:w-1/2 prose dark:prose-invert prose-a:no-underline prose-a:font-bold">
+      <div className="mx-3 py-10 sm:mx-0 xl:w-1/2 prose dark:prose-invert prose-a:no-underline prose-a:font-bold">
         <MdxComponent />
       </div>
     </>

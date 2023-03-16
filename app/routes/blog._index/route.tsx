@@ -19,7 +19,7 @@ export default function () {
     <>
       <Title>Here I blog about whatever get my attention</Title>
       {posts.length > 0 ? (
-        <div className="mt-10 w-full flex flex-col items-center space-y-5">
+        <div className="py-10 w-full sm:flex sm:flex-col sm:items-center space-y-5">
           {posts.map((post, i) => (
             <Post {...post} key={i} />
           ))}

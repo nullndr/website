@@ -30,7 +30,14 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-[#202020] text-[#d6d6d6] font-['monospace']">
-        <Outlet />
+        <div className="static sm:relative">
+          <Outlet />
+          <div className="fixed m-3 bottom-0 right-0">
+            <a href="https://notbyai.fyi/">
+              <img src="https://user-images.githubusercontent.com/62137266/225637256-6b497779-d10e-40be-8c4a-e0e6349d7b25.svg" />
+            </a>
+          </div>
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

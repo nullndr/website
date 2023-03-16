@@ -4,7 +4,7 @@ import { useMatch } from "./useMatch";
 export default function () {
   const { handle } = useMatch();
   return (
-    <div className="h-fit w-full flex flex-col items-center">
+    <div className="flex h-screen min-h-full flex-col items-center">
       {handle && (
         <Link
           className="mt-5 hover:text-[#e6c2bf] text-xl font-bold"
