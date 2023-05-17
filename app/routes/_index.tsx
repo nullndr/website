@@ -5,11 +5,13 @@ import {
   FaKey,
   FaLinkedin,
   FaMastodon,
+  FaStackOverflow,
   FaTelegramPlane,
   FaTwitter,
 } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
+import { LinkWrapper } from "~/components/LinkWrapper";
 
 export default function Index() {
   return (
@@ -21,38 +23,41 @@ export default function Index() {
             <span className="animate-blink">|</span>
           </div>
           <nav className="pt-5 flex justify-center flex-wrap">
-            <IconContext.Provider value={{ color: "yellow", size: "2em" }}>
-              <a rel="me" href="https://mastodon.uno/@nullndr" className="p-2">
+            <IconContext.Provider
+              value={{ color: "yellow", className: "p-2", size: "3em" }}
+            >
+              <a rel="me" href="https://mastodon.uno/@nullndr">
                 <FaMastodon />
               </a>
-              <a href="https://t.me/nullndr" className="p-2">
+              <a href="https://t.me/nullndr">
                 <FaTelegramPlane />
               </a>
-              <a href="https://gitlab.com/nullndr" className="p-2">
+              <a href="https://gitlab.com/nullndr">
                 <FaGitlab />
               </a>
-              <a href="https://github.com/nullndr" className="p-2">
+              <a href="https://github.com/nullndr">
                 <FaGithub />
               </a>
-              <a href="https://twitter.com/nullndr" className="p-2">
+              <a href="https://twitter.com/nullndr">
                 <FaTwitter />
               </a>
-              <a href="mailto: nullndr@duck.com" className="p-2">
+              <a href="mailto: nullndr@duck.com">
                 <MdEmail />
               </a>
-              <a href="https://linkedin.com/in/nullndr" className="p-2">
+              <a href="https://linkedin.com/in/nullndr">
                 <FaLinkedin />
               </a>
-              <a href="/key.pub" download={true} className="p-2">
+              <a href="https://stackoverflow.com/users/10503039/nullndr">
+                <FaStackOverflow />
+              </a>
+              <a href="/key.pub" download={true}>
                 <FaKey />
               </a>
             </IconContext.Provider>
           </nav>
-          <div className="pt-5 flex flex-col items-center text-xl">
-            <Link to="/blog" className="hover:text-[#e6c2bf] font-bold">
-              Blog
-            </Link>
-          </div>
+          <LinkWrapper>
+            <Link to="/blog">Blog</Link>
+          </LinkWrapper>
         </div>
       </div>
     </div>

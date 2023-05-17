@@ -9,7 +9,7 @@ export const handle = {
   text: "Home",
 };
 
-export const loader = async () => {
+export const loader = () => {
   return findPosts();
 };
 
@@ -19,11 +19,7 @@ export default function () {
     <>
       <Title>Here I blog about whatever get my attention</Title>
       {posts.length > 0 ? (
-        <div className="py-10 w-full sm:flex sm:flex-col sm:items-center space-y-5">
-          {posts.map((post, i) => (
-            <Post {...post} key={i} />
-          ))}
-        </div>
+        posts.map((post, i) => <Post {...post} key={i} />)
       ) : (
         <EmptyState />
       )}

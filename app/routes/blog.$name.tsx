@@ -2,6 +2,7 @@ import type { LoaderArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getMDXComponent } from "mdx-bundler/client";
 import React from "react";
+import { BlogWrapper } from "~/components/BlogWrapper";
 import { Title } from "~/components/Title";
 import { getMdxFile } from "~/utils/posts.server";
 
@@ -29,9 +30,11 @@ export default function () {
   return (
     <>
       <Title>{title}</Title>
-      <div className="mx-3 py-10 sm:mx-0 xl:w-1/2 prose dark:prose-invert prose-a:no-underline prose-a:font-bold">
-        <MdxComponent />
-      </div>
+      <BlogWrapper>
+        <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
+          <MdxComponent />
+        </div>
+      </BlogWrapper>
     </>
   );
 }
