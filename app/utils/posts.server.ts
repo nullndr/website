@@ -33,7 +33,7 @@ export const getMdxFile = async (file: string) => {
 };
 
 export const findPosts = async () => {
-  const files = await readdir("posts");
+  const files = await readdir("./posts");
   const posts: (FrontMatter & {
     filename: string;
   })[] = [];
@@ -66,6 +66,6 @@ export const findPosts = async () => {
   }
 
   return posts.sort((a, b) =>
-    new Date(a.published) > new Date(b.published) ? -1 : 1
+    new Date(a.published) > new Date(b.published) ? -1 : 1,
   );
 };

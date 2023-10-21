@@ -1,5 +1,5 @@
 import codeHikeStyle from "@code-hike/mdx/dist/index.css";
-import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Link,
   Links,
@@ -21,7 +21,7 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: codeHikeStyle },
 ];
 
-export const meta: V2_MetaFunction = () => [
+export const meta: MetaFunction = () => [
   {
     charSet: "utf-8",
   },

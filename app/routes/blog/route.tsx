@@ -3,7 +3,9 @@ import { LinkWrapper } from "~/components/LinkWrapper";
 import { useMatch } from "./useMatch";
 
 export default function () {
-  const { handle } = useMatch();
+  const { handle } = useMatch() as unknown as {
+    handle: { to: string; text: string };
+  };
   return (
     <div>
       <LinkWrapper>
