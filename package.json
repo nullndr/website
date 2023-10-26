@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit --pretty --skipLibCheck"
   },
   "dependencies": {
-    "@code-hike/mdx": "^0.8.3",
+    "@code-hike/mdx": "^0.9.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
     "@remix-run/serve": "^2.1.0",
