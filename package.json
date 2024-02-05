@@ -12,9 +12,9 @@
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
     "@remix-run/serve": "^2.1.0",
-    "esbuild": "^0.18.18",
+    "esbuild": "^0.20.0",
     "isbot": "^3.6.13",
-    "mdx-bundler": "^9.2.1",
+    "mdx-bundler": "^10.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shiki": "^0.14.3"
