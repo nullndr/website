@@ -1,4 +1,4 @@
-import type { LoaderFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
 import React from "react";
@@ -20,6 +20,29 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   return getMdxFile(name);
 };
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  if (data == null) {
+    return [];
+  }
+
+  const {
+    frontmatter: { title, description },
+  } = data;
+  return [
+    {
+      title,
+    },
+    {
+      property: "og:title",
+      content: title,
+    },
+    {
+      property: "description",
+      content: description,
+    },
+  ];
+};
+
 export default function () {
   const {
     code,
@@ -28,13 +51,13 @@ export default function () {
   const MdxComponent = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <>
+    <div className="space-y-5">
       <Title>{title}</Title>
       <BlogWrapper>
         <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
           <MdxComponent />
         </div>
       </BlogWrapper>
-    </>
+    </div>
   );
 }

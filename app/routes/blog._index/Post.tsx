@@ -11,8 +11,8 @@ type PostProps = {
 export function Post({ title, description, filename, published }: PostProps) {
   return (
     <BlogWrapper>
-      <div className="p-5 text-center font-bold border-gray-600 border-2 rounded-lg">
-        <Link to={filename}>
+      <Link to={filename}>
+        <div className="p-5 text-center font-bold border-gray-600 border-2 rounded-lg">
           <span className="text-[#ffff00] hover:text-[#e6c2bf] text-2xl">
             {title}
           </span>
@@ -20,8 +20,8 @@ export function Post({ title, description, filename, published }: PostProps) {
             published,
           ).toLocaleDateString()})`}</span>
           {description && <div className="mt-5 text-xl">{description}</div>}
-        </Link>
-      </div>
+        </div>
+      </Link>
     </BlogWrapper>
   );
 }

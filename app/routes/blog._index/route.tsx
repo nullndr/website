@@ -16,13 +16,13 @@ export const loader = () => {
 export default function () {
   const posts = useLoaderData<typeof loader>();
   return (
-    <>
+    <div className="space-y-5">
       <Title>Here I blog about whatever get my attention</Title>
       {posts.length > 0 ? (
         posts.map((post, i) => <Post {...post} key={i} />)
       ) : (
         <EmptyState />
       )}
-    </>
+    </div>
   );
 }

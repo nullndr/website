@@ -1,4 +1,5 @@
-import { Link, Outlet } from "@remix-run/react";
+import { Link } from "@remix-run/react";
+import { Outlet } from "react-router-dom";
 import { LinkWrapper } from "~/components/LinkWrapper";
 import { useMatch } from "./useMatch";
 
