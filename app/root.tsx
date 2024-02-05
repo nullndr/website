@@ -42,10 +42,8 @@ export default function App() {
         <Links />
       </head>
       <Body>
-        <div className="relative">
-          <Outlet />
-          <Notbyai />
-        </div>
+        <Outlet />
+        <Notbyai />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
