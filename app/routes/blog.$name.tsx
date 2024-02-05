@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { getMDXComponent } from "mdx-bundler/client";
+import { getMDXComponent } from "mdx-bundler/client/index.js";
 import React from "react";
 import { BlogWrapper } from "~/components/BlogWrapper";
 import { Title } from "~/components/Title";
