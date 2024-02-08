@@ -1,7 +1,8 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
 import React from "react";
+import { FaEdit } from "react-icons/fa";
 import { BlogWrapper } from "~/components/BlogWrapper";
 import { Title } from "~/components/Title";
 import { getMdxFile } from "~/utils/posts.server";
@@ -12,12 +13,13 @@ export const handle = {
 };
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-  const name = params.name;
-  if (name == null) {
+  const file = params.file;
+  if (file == null) {
     throw new Response(null, { status: 400 });
   }
 
-  return getMdxFile(name);
+  const data = await getMdxFile(file);
+  return { ...data, file };
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -47,6 +49,7 @@ export default function () {
   const {
     code,
     frontmatter: { title },
+    file,
   } = useLoaderData<typeof loader>();
   const MdxComponent = React.useMemo(() => getMDXComponent(code), [code]);
 
@@ -57,6 +60,15 @@ export default function () {
         <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
           <MdxComponent />
         </div>
+        <Link
+          to={`https://github.com/nullndr/website/edit/main/posts/${file}.mdx`}
+          className="hover:text-[#ffff00]"
+        >
+          <div className="flex justify-end items-center space-x-2 pb-5">
+            <FaEdit />
+            <div className="font-bold">Typo?</div>
+          </div>
+        </Link>
       </BlogWrapper>
     </div>
   );
