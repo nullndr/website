@@ -10,24 +10,23 @@
   },
   "dependencies": {
     "@code-hike/mdx": "0.9.0",
-    "@remix-run/node": "2.5.0",
-    "@remix-run/react": "2.5.0",
-    "@remix-run/serve": "2.5.0",
-    "esbuild": "0.20.0",
-    "isbot": "3.6.13",
-    "mdx-bundler": "10.0.1",
+    "@remix-run/node": "2.8.1",
+    "@remix-run/react": "2.8.1",
+    "@remix-run/serve": "2.8.1",
+    "esbuild": "0.20.2",
+    "isbot": "4.1.0",
+    "mdx-bundler": "10.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "5.0.1"
   },
   "devDependencies": {
-    "@remix-run/dev": "2.5.0",
-    "@remix-run/eslint-config": "2.5.0",
-    "@tailwindcss/typography": "0.5.9",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.46.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "@remix-run/dev": "2.8.1",
+    "@tailwindcss/typography": "0.5.12",
+    "@types/react": "18.2.74",
+    "@types/react-dom": "18.2.24",
+    "eslint": "8.57.0",
+    "tailwindcss": "3.4.3",
+    "typescript": "5.4.4"
   }
 }
