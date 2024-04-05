@@ -33,7 +33,7 @@ export const getMdxFile = async (file: string) => {
 
 export const findPosts = async () => {
   const files = await readdir(
-    process.env.VERCEL_ENV ? `${import.meta.dirname}/../posts` : `posts`,
+    process.env.VERCEL_ENV ? `${import.meta.dirname}/posts` : `posts`,
   );
   const posts: (FrontMatter & {
     filename: string;
