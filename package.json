@@ -3,16 +3,21 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
-    "start": "remix-serve ./build/index.js",
-    "typecheck": "tsc --noEmit --pretty --skipLibCheck"
+    "build": "remix vite:build",
+    "deploy": "npm run build && wrangler pages deploy ./build/client",
+    "dev": "remix vite:dev",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "start": "wrangler pages dev ./build/client",
+    "typecheck": "tsc",
+    "typegen": "wrangler types",
+    "preview": "npm run build && wrangler pages dev ./build/client",
+    "build-cf-types": "wrangler types"
   },
   "dependencies": {
     "@code-hike/mdx": "0.9.0",
     "@remix-run/node": "2.8.1",
-    "@remix-run/react": "2.8.1",
     "@remix-run/serve": "2.8.1",
+    "@remix-run/react": "2.8.1",
     "esbuild": "0.20.2",
     "isbot": "4.1.0",
     "mdx-bundler": "10.0.2",
@@ -21,12 +26,18 @@
     "react-icons": "5.0.1"
   },
   "devDependencies": {
+    "@mdx-js/rollup": "^3.0.1",
     "@remix-run/dev": "2.8.1",
     "@tailwindcss/typography": "0.5.12",
+    "@types/eslint": "^8.56.7",
     "@types/react": "18.2.74",
     "@types/react-dom": "18.2.24",
+    "autoprefixer": "^10.4.19",
     "eslint": "8.57.0",
-    "tailwindcss": "3.4.3",
-    "typescript": "5.4.4"
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "5.4.4",
+    "vite": "5.1.0",
+    "vite-tsconfig-paths": "4.2.1"
   }
 }

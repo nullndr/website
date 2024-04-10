@@ -1,9 +1,8 @@
-import codeHikeStyle from "@code-hike/mdx/dist/index.css";
+import codeHikeStyle from "@code-hike/mdx/dist/index.css?url";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Link,
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -11,7 +10,7 @@ import {
   isRouteErrorResponse,
   useRouteError,
 } from "@remix-run/react";
-import stylesheet from "~/tailwind.css";
+import stylesheet from "~/tailwind.css?url";
 import { Body } from "./components/Body";
 import { LinkWrapper } from "./components/LinkWrapper";
 import { Notbyai } from "./components/Notbyai";
@@ -46,7 +45,6 @@ export default function App() {
         <Notbyai />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </Body>
     </html>
   );
