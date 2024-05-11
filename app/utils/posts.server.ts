@@ -1,6 +1,7 @@
 import { remarkCodeHike } from "@code-hike/mdx";
 import { readdir, readFile } from "fs/promises";
 import { bundleMDX } from "mdx-bundler";
+import path from "path";
 
 type FrontMatter = {
   title: string;
@@ -9,8 +10,9 @@ type FrontMatter = {
 };
 
 export const getMdxFile = async (file: string) => {
+  const filePath = path.join(process.cwd(), `posts/${file}.mdx`);
   return bundleMDX<FrontMatter>({
-    source: (await readFile(`posts/${file}.mdx`)).toString(),
+    source: (await readFile(filePath)).toString(),
     mdxOptions(options) {
       return {
         rehypePlugins: [...(options.rehypePlugins ?? [])],
@@ -37,8 +39,9 @@ export const findPosts = async () => {
     filename: string;
   })[] = [];
   for (const file of files.filter((file) => file.endsWith(".mdx"))) {
+    const filePath = path.join(process.cwd(), `posts/${file}`);
     const { frontmatter } = await bundleMDX<FrontMatter>({
-      source: (await readFile(`posts/${file}`)).toString(),
+      source: (await readFile(filePath)).toString(),
       mdxOptions() {
         return {
           remarkPlugins: [

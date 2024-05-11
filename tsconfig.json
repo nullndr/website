@@ -17,6 +17,7 @@
     "paths": {
       "~/*": ["./app/*"]
     },
+    "types": ["./node_modules/@remix-run/react/future/single-fetch.d.ts"],
 
     // Remix takes care of building everything in `remix build`.
     "noEmit": true

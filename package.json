@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@code-hike/mdx": "0.9.0",
-    "@remix-run/node": "2.8.1",
-    "@remix-run/serve": "2.8.1",
-    "@remix-run/react": "2.8.1",
+    "@remix-run/node": "2.9.2",
+    "@remix-run/serve": "2.9.2",
+    "@remix-run/react": "2.9.2",
     "esbuild": "0.20.2",
     "isbot": "4.1.0",
     "mdx-bundler": "10.0.2",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@mdx-js/rollup": "^3.0.1",
-    "@remix-run/dev": "2.8.1",
+    "@remix-run/dev": "2.9.2",
     "@tailwindcss/typography": "0.5.12",
     "@types/eslint": "^8.56.7",
     "@types/react": "18.2.74",

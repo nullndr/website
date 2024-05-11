@@ -14,6 +14,9 @@ export default defineConfig({
     }),
     remix({
       ignoredRouteFiles: ["**/*.css"],
+      future: {
+        unstable_singleFetch: true,
+      },
     }),
     tsconfigPaths(),
   ],
