@@ -2,7 +2,6 @@ import { Link } from "@remix-run/react";
 import {
   FaGithub,
   FaGitlab,
-  FaKey,
   FaLinkedin,
   FaMastodon,
   FaStackOverflow,
@@ -49,9 +48,6 @@ export default function Index() {
               </a>
               <a href="https://stackoverflow.com/users/10503039/nullndr">
                 <FaStackOverflow />
-              </a>
-              <a href="/key.pub" download={true}>
-                <FaKey />
               </a>
             </IconContext.Provider>
           </nav>
