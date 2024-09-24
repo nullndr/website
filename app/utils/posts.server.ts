@@ -7,6 +7,7 @@ type FrontMatter = {
   title: string;
   description: string;
   published: string;
+  isFeatured: boolean;
 };
 
 export const getMdxFile = async (file: string) => {
@@ -61,9 +62,7 @@ export const findPosts = async () => {
 
     posts.push({
       filename: file.replace(".mdx", ""),
-      description: frontmatter.description,
-      title: frontmatter.title,
-      published: frontmatter.published,
+      ...frontmatter,
     });
   }
 
