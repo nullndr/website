@@ -2,7 +2,7 @@ import { useLoaderData } from "@remix-run/react";
 import { Title } from "~/components/Title";
 import { findPosts } from "~/utils/posts.server";
 import { EmptyState } from "./EmptyState";
-import { Post } from "./Post";
+import { PostPreview } from "./PostPreview";
 
 export const handle = {
   to: "/",
@@ -15,11 +15,16 @@ export const loader = () => {
 
 export default function () {
   const posts = useLoaderData<typeof loader>();
+
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <Title>Here I blog about whatever get my attention</Title>
       {posts.length > 0 ? (
-        posts.map((post, i) => <Post {...post} key={i} />)
+        <div className="flex flex-col items-center space-y-5">
+          {posts.map((post, i) => (
+            <PostPreview {...post} key={i} />
+          ))}
+        </div>
       ) : (
         <EmptyState />
       )}

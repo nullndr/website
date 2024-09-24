@@ -6,7 +6,7 @@ import path from "path";
 type FrontMatter = {
   title: string;
   description: string;
-  published: string;
+  published: Date;
   isFeatured: boolean;
 };
 
@@ -34,11 +34,14 @@ export const getMdxFile = async (file: string) => {
   });
 };
 
+export type Post = Omit<FrontMatter, "published"> & {
+  filename: string;
+  published: string;
+};
+
 export const findPosts = async () => {
   const files = await readdir(`posts`);
-  const posts: (FrontMatter & {
-    filename: string;
-  })[] = [];
+  const posts: Post[] = [];
   for (const file of files.filter((file) => file.endsWith(".mdx"))) {
     const filePath = path.join(process.cwd(), `posts/${file}`);
     const { frontmatter } = await bundleMDX<FrontMatter>({
@@ -61,8 +64,9 @@ export const findPosts = async () => {
     });
 
     posts.push({
-      filename: file.replace(".mdx", ""),
       ...frontmatter,
+      filename: file.replace(".mdx", ""),
+      published: frontmatter.published.toISOString(),
     });
   }
 

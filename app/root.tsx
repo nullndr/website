@@ -13,7 +13,6 @@ import {
 import stylesheet from "~/tailwind.css?url";
 import { Body } from "./components/Body";
 import { LinkWrapper } from "./components/LinkWrapper";
-import { Notbyai } from "./components/Notbyai";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -29,7 +28,7 @@ export const meta: MetaFunction = () => [
   },
   {
     property: "viewport",
-    content: "width=device-width,initial-scale=1",
+    content: "width=device-width,initial-scale=1.0",
   },
 ];
 
@@ -42,7 +41,6 @@ export default function App() {
       </head>
       <Body>
         <Outlet />
-        <Notbyai />
         <ScrollRestoration />
         <Scripts />
       </Body>

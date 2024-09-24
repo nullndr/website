@@ -11,6 +11,7 @@ import {
 import { IconContext } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
 import { LinkWrapper } from "~/components/LinkWrapper";
+import { Notbyai } from "~/components/Notbyai";
 
 export default function Index() {
   return (
@@ -22,6 +23,7 @@ export default function Index() {
             <span className="animate-blink">|</span>
           </div>
           <nav className="pt-5 flex justify-center flex-wrap">
+            <Notbyai />
             <IconContext.Provider
               value={{ color: "yellow", className: "p-2", size: "3em" }}
             >

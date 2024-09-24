@@ -8,5 +8,7 @@ export function useMatch() {
     throw new Error("Bruh");
   }
 
-  return { handle, ...rest};
+  return { handle, ...rest } as unknown as {
+    handle: { to: string; text: string };
+  };
 }

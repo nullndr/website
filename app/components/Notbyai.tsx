@@ -1,6 +1,6 @@
 export function Notbyai() {
   return (
-    <div className="fixed m-3 bottom-0 right-0">
+    <div className="flex flex-col items-center">
       <a href="https://notbyai.fyi/" target="_blank">
         <img src="https://user-images.githubusercontent.com/62137266/225653923-a69103f5-b318-4e52-9ea1-95b61d388366.svg" />
       </a>
