@@ -1,8 +1,8 @@
 import { useLoaderData } from "@remix-run/react";
+import { EmptyState } from "~/components/EmptyState";
+import { PostPreview } from "~/components/PostPreview";
 import { Title } from "~/components/Title";
 import { findPosts } from "~/utils/posts.server";
-import { EmptyState } from "./EmptyState";
-import { PostPreview } from "./PostPreview";
 
 export const handle = {
   to: "/",

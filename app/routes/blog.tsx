@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { Outlet } from "react-router-dom";
 import { LinkWrapper } from "~/components/LinkWrapper";
-import { useMatch } from "./useMatch";
+import { useMatch } from "~/hooks/useMatch";
 
 export default function () {
   const { handle } = useMatch();
