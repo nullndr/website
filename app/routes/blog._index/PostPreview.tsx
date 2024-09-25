@@ -15,7 +15,7 @@ export function PostPreview({
       <Link to={filename}>
         <div className="space-y-4 py-3 text-center font-bold border-gray-600 border-2 rounded-lg">
           <div className="text-[#ffff00] text-2xl">{title}</div>
-          <div className="text-xl">{description}</div>
+          <div className="text-xl px-3">{description}</div>
           <div>
             <time>{formattedDate}</time>
           </div>
