@@ -24,7 +24,7 @@ export const meta: MetaFunction = () => [
     charSet: "utf-8",
   },
   {
-    title: "nullndr",
+    title: "Nullndr",
   },
   {
     property: "viewport",
