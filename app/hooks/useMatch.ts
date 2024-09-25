@@ -5,10 +5,10 @@ export function useMatch() {
   const { handle, ...rest } = matches[matches.length - 1];
 
   if (handle == null) {
-    throw new Error("Bruh");
+    throw new Error(`handle is missing for ${rest.pathname}`);
   }
 
-  return { handle, ...rest } as unknown as {
+  return { handle, ...rest } as unknown as typeof rest & {
     handle: { to: string; text: string };
   };
 }
