@@ -17,7 +17,7 @@ export default function () {
   const posts = useLoaderData<typeof loader>();
 
   return (
-    <div className="space-y-6">
+    <>
       <Title>Here I blog about whatever get my attention</Title>
       {posts.length > 0 ? (
         <div className="flex flex-col items-center space-y-5">
@@ -28,6 +28,6 @@ export default function () {
       ) : (
         <EmptyState />
       )}
-    </div>
+    </>
   );
 }

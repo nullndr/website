@@ -7,7 +7,7 @@ export default function () {
   const { handle } = useMatch();
 
   return (
-    <div>
+    <div className="space-y-6">
       <LinkWrapper>
         <Link to={handle.to}>{handle.text}</Link>
       </LinkWrapper>
