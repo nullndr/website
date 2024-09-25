@@ -3,7 +3,6 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { getMDXComponent } from "mdx-bundler/client/index.js";
 import React from "react";
 import { FaEdit } from "react-icons/fa";
-import { Notbyai } from "~/components/Notbyai";
 import { Title } from "~/components/Title";
 import { getMdxFile } from "~/utils/posts.server";
 
@@ -58,7 +57,7 @@ export default function () {
       <Title>{title}</Title>
       <div className="flex flex-col items-center">
         <div className="space-y-5 sm:w-full sm:px-5 lg:w-5/6 xl:w-1/3">
-          <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
+          <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold hover:prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
             <MdxComponent />
           </div>
           <div>
