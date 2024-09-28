@@ -13,7 +13,7 @@ export const loader = () => {
   return findPosts();
 };
 
-export default function () {
+export default function Blog() {
   const posts = useLoaderData<typeof loader>();
 
   return (

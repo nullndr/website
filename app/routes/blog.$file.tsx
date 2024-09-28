@@ -46,7 +46,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   ];
 };
 
-export default function () {
+export default function Post() {
   const {
     code,
     frontmatter: { title, published },
@@ -62,7 +62,7 @@ export default function () {
         <time>{formattedDate}</time>
       </div>
       <div className="flex flex-col items-center">
-        <div className="space-y-5 sm:w-full sm:px-5 lg:w-5/6 xl:w-1/3">
+        <div className="space-y-5 sm:w-full sm:px-5 lg:w-5/6 xl:w-2/3">
           <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold hover:prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
             <MdxComponent />
           </div>

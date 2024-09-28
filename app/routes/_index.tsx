@@ -53,9 +53,11 @@ export default function Index() {
               </a>
             </IconContext.Provider>
           </nav>
-          <LinkWrapper>
-            <Link to="/blog">Blog</Link>
-          </LinkWrapper>
+          <div className="flex justify-center items-center space-x-6">
+            <LinkWrapper>
+              <Link to="/blog">Blog</Link>
+            </LinkWrapper>
+          </div>
         </div>
       </div>
     </div>

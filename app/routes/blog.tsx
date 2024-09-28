@@ -20,7 +20,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function () {
+export default function BlogLayout() {
   const { handle } = useMatch();
 
   return (
