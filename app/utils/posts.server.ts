@@ -12,8 +12,9 @@ type FrontMatter = {
 
 export const getMdxFile = async (file: string) => {
   const filePath = path.join(process.cwd(), `posts/${file}.mdx`);
+  const postContent = (await readFile(filePath)).toString();
   return bundleMDX<FrontMatter>({
-    source: (await readFile(filePath)).toString(),
+    source: postContent,
     mdxOptions(options) {
       return {
         rehypePlugins: [...(options.rehypePlugins ?? [])],
@@ -44,8 +45,9 @@ export const findPosts = async () => {
   const posts: Post[] = [];
   for (const file of files.filter((file) => file.endsWith(".mdx"))) {
     const filePath = path.join(process.cwd(), `posts/${file}`);
+    const postContent = (await readFile(filePath)).toString();
     const { frontmatter } = await bundleMDX<FrontMatter>({
-      source: (await readFile(filePath)).toString(),
+      source: postContent,
       mdxOptions() {
         return {
           remarkPlugins: [
