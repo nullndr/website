@@ -38,6 +38,16 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <script
+          defer
+          data-domain="plausible.nullndr.com"
+          src="https://plausible.nullndr.com/js/script.outbound-links.js"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible = window.plausible || function(){(window.plausible.q = window.plausible.q || []).push(arguments)}`,
+          }}
+        ></script>
       </head>
       <Body>
         <Outlet />
