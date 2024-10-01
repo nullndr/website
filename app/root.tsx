@@ -40,8 +40,8 @@ export default function App() {
         <Links />
         <script
           defer
-          data-domain="plausible.nullndr.com"
-          src="https://plausible.nullndr.com/js/script.outbound-links.js"
+          data-domain="nullndr.com"
+          src="https://plausible.nullndr.com/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"
         />
         <script
           dangerouslySetInnerHTML={{
