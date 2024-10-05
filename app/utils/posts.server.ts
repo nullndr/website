@@ -1,7 +1,7 @@
 import { remarkCodeHike } from "@code-hike/mdx";
-import { readdir, readFile } from "fs/promises";
 import { bundleMDX } from "mdx-bundler";
-import path from "path";
+import { readdir, readFile } from "node:fs/promises";
+import path from "node:path";
 
 type FrontMatter = {
   title: string;
@@ -41,7 +41,7 @@ export type Post = Omit<FrontMatter, "published"> & {
 };
 
 export const findPosts = async () => {
-  const files = await readdir(`posts`);
+  const files = await readdir("posts");
   const posts: Post[] = [];
   for (const file of files.filter((file) => file.endsWith(".mdx"))) {
     const filePath = path.join(process.cwd(), `posts/${file}`);

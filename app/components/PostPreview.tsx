@@ -1,4 +1,4 @@
-import { SerializeFrom } from "@remix-run/node";
+import type { SerializeFrom } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { useFormattedDate } from "~/hooks";
 import type { Post } from "~/utils/posts.server";
