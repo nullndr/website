@@ -63,8 +63,14 @@ export default function Post() {
       </div>
       <div className="flex flex-col items-center">
         <div className="space-y-5 sm:w-full sm:px-5 lg:w-5/6 xl:w-2/3">
-          <div className="dark:prose-invert prose-a:no-underline prose-a:font-bold hover:prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
-            <MdxComponent />
+          <div className=" prose-blockquote:bg-[#282c34] prose-blockquote:border-l-4 prose-blockquote:border-[#21252b] prose-blockquote:px-2 prose-blockquote:py-2 prose-blockquote:rounded-r">
+            <div className="prose-h2:text-[#ffff00] prose-h2:font-bold prose-h2:text-2xl">
+              <div className="prose-code:px-1 prose-code:py-0.5 prose-code:bg-[#282c34] prose-code:text-[#d6d6d6] prose-code:rounded prose-code:font-mono">
+                <div className="space-y-5 dark:prose-invert prose-a:font-bold hover:prose-a:text-[#ffff00] prose-p:text-[#d6d6d6]">
+                  <MdxComponent />
+                </div>
+              </div>
+            </div>
           </div>
           <Notbyai />
           <div>
