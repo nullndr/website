@@ -24,7 +24,7 @@ export default function BlogLayout() {
   const { handle } = useMatch();
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 px-2">
       <LinkWrapper>
         <Link to={handle.to}>{handle.text}</Link>
       </LinkWrapper>

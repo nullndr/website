@@ -18,7 +18,7 @@ export default function Blog() {
   return (
     <>
       <Title>Here I blog about whatever get my attention</Title>
-      <div className="flex flex-col items-center space-y-5">
+      <div className="mt-5 flex flex-col items-center space-y-5">
         {posts.map((post) => (
           <PostPreview {...post} key={post.title} />
         ))}
