@@ -60,8 +60,8 @@ export default function Post() {
       <header>
         <Title>{title}</Title>
         <span>
-          <time>{formattedDate}</time>·
-          <Link to="/blog" className="hover:text-[#ffff00]">
+          <time>{formattedDate}</time> ·{" "}
+          <Link to="/blog" className="hover:text-[#e6c2bf] font-bold">
             Go Back
           </Link>
         </span>
