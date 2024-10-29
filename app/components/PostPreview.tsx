@@ -11,14 +11,12 @@ export function PostPreview({
 }: SerializeFrom<Post>) {
   const formattedDate = useFormattedDate(published);
   return (
-    <div className="w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/3">
+    <div className="">
       <Link to={filename}>
-        <div className="space-y-4 py-3 text-center font-bold border-gray-600 border-2 rounded-lg">
+        <div className="py-3 font-bold">
           <div className="text-[#ffff00]">{title}</div>
           <div>{description}</div>
-          <div>
-            <time>{formattedDate}</time>
-          </div>
+          <time className="text-sm">{formattedDate}</time>
         </div>
       </Link>
     </div>

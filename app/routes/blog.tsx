@@ -1,8 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 import { Outlet } from "react-router-dom";
-import { LinkWrapper } from "~/components/LinkWrapper";
-import { useMatch } from "~/hooks/useMatch";
 
 export const meta: MetaFunction = () => {
   return [
@@ -21,13 +18,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function BlogLayout() {
-  const { handle } = useMatch();
-
   return (
-    <div className="space-y-6 px-2">
-      <LinkWrapper>
-        <Link to={handle.to}>{handle.text}</Link>
-      </LinkWrapper>
+    <div className="space-y-6 max-w-3xl mx-auto">
       <Outlet />
     </div>
   );

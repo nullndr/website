@@ -57,12 +57,18 @@ export default function Post() {
 
   return (
     <>
-      <Title>{title}</Title>
-      <div className="text-center">
-        <time>{formattedDate}</time>
-      </div>
-      <div className="flex flex-col items-center">
-        <div className="space-y-5 sm:w-full sm:px-5 lg:w-5/6 xl:w-2/3">
+      <header>
+        <Title>{title}</Title>
+        <span>
+          <time>{formattedDate}</time>·
+          <Link to="/blog" className="hover:text-[#ffff00]">
+            Go Back
+          </Link>
+        </span>
+      </header>
+
+      <main>
+        <div className="space-y-5">
           <div className=" prose-blockquote:bg-[#282c34] prose-blockquote:border-l-4 prose-blockquote:border-[#21252b] prose-blockquote:px-2 prose-blockquote:py-2 prose-blockquote:rounded-r">
             <div className="prose-h2:text-[#ffff00] prose-h2:font-bold prose-h2:text-2xl">
               <div className="prose-code:px-1 prose-code:py-0.5 prose-code:bg-[#282c34] prose-code:text-[#d6d6d6] prose-code:rounded prose-code:font-mono">
@@ -85,7 +91,7 @@ export default function Post() {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
