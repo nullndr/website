@@ -32,7 +32,7 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-export default function App() {
+export function Layout({ children }: React.PropsWithChildren) {
   return (
     <html lang="en">
       <head>
@@ -51,7 +51,7 @@ export default function App() {
         />
       </head>
       <Body>
-        <Outlet />
+        {children}
         <ScrollRestoration />
         <Scripts />
       </Body>
@@ -59,55 +59,43 @@ export default function App() {
   );
 }
 
+export default function App() {
+  return <Outlet />;
+}
+
 export function ErrorBoundary() {
   const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
     return (
-      <html lang="en">
-        <head>
-          <Meta />
-          <Links />
-        </head>
-        <Body>
-          <div className="flex flex-col items-center justify-around h-[100vh]">
-            <div>
-              <div className="text-center text-[#ffff00] text-[10vw] font-bold">
-                404
-              </div>
-              <div className="font-bold">Where do you think you are going?</div>
-              <div className="text-center">
-                <LinkWrapper>
-                  <Link to="/">Home</Link>
-                </LinkWrapper>
-              </div>
-            </div>
+      <div className="flex flex-col items-center justify-around h-[100vh]">
+        <div>
+          <div className="text-center text-[#ffff00] text-[10vw] font-bold">
+            404
           </div>
-        </Body>
-      </html>
+          <div className="font-bold">Where do you think you are going?</div>
+          <div className="text-center">
+            <LinkWrapper>
+              <Link to="/">Home</Link>
+            </LinkWrapper>
+          </div>
+        </div>
+      </div>
     );
   }
 
   return (
-    <html lang="en">
-      <head>
-        <Meta />
-        <Links />
-      </head>
-      <Body>
-        <div className="flex flex-col items-center justify-around h-[100vh]">
-          <div>
-            <div className="text-center text-[#ffff00] text-[6vw] font-bold">
-              Something bad happened
-            </div>
-            <div className="text-center">
-              <LinkWrapper>
-                <Link to="/">Home</Link>
-              </LinkWrapper>
-            </div>
-          </div>
+    <div className="flex flex-col items-center justify-around h-[100vh]">
+      <div>
+        <div className="text-center text-[#ffff00] text-[6vw] font-bold">
+          Something bad happened
         </div>
-      </Body>
-    </html>
+        <div className="text-center">
+          <LinkWrapper>
+            <Link to="/">Home</Link>
+          </LinkWrapper>
+        </div>
+      </div>
+    </div>
   );
 }

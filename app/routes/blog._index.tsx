@@ -12,7 +12,7 @@ export default function Blog() {
   const posts = useLoaderData<typeof loader>();
 
   return (
-    <>
+    <div className="mx-2">
       <LinkWrapper>
         <Link to="/">Home</Link>
       </LinkWrapper>
@@ -22,6 +22,6 @@ export default function Blog() {
           <PostPreview {...post} key={post.title} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

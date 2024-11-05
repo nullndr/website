@@ -56,7 +56,7 @@ export default function Post() {
   const MdxComponent = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <>
+    <div className="mx-2">
       <header>
         <Title>{title}</Title>
         <span>
@@ -92,6 +92,6 @@ export default function Post() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }
