@@ -1,12 +1,12 @@
 import { remarkCodeHike } from "@code-hike/mdx";
 import { bundleMDX } from "mdx-bundler";
-import { readdir, readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 type FrontMatter = {
   title: string;
   description: string;
-  published: Date;
+  date: Date;
   isFeatured: boolean;
 };
 
@@ -68,7 +68,7 @@ export const findPosts = async () => {
     posts.push({
       ...frontmatter,
       filename: file.replace(".mdx", ""),
-      published: frontmatter.published.toISOString(),
+      published: frontmatter.date.toISOString(),
     });
   }
 

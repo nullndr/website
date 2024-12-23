@@ -49,10 +49,10 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function Post() {
   const {
     code,
-    frontmatter: { title, published },
+    frontmatter: { title, date },
     file,
   } = useLoaderData<typeof loader>();
-  const formattedDate = useFormattedDate(published);
+  const formattedDate = useFormattedDate(date);
   const MdxComponent = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
