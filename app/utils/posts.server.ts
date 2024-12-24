@@ -42,35 +42,38 @@ export type Post = Omit<FrontMatter, "published"> & {
 
 export const findPosts = async () => {
   const files = await readdir("posts");
-  const posts: Post[] = [];
-  for (const file of files.filter((file) => file.endsWith(".mdx"))) {
-    const filePath = path.join(process.cwd(), `posts/${file}`);
-    const postContent = (await readFile(filePath)).toString();
-    const { frontmatter } = await bundleMDX<FrontMatter>({
-      source: postContent,
-      mdxOptions() {
-        return {
-          remarkPlugins: [
-            [
-              remarkCodeHike,
-              {
-                theme: "one-dark-pro",
-                lineNumbers: true,
-                showCopyButton: true,
-                autoImport: true,
-              },
-            ],
-          ],
-        };
-      },
-    });
+  const posts = await Promise.all(
+    files
+      .filter((file) => file.endsWith(".mdx"))
+      .map(async (file) => {
+        const filePath = path.join(process.cwd(), `posts/${file}`);
+        const postContent = (await readFile(filePath)).toString();
+        const { frontmatter } = await bundleMDX<FrontMatter>({
+          source: postContent,
+          mdxOptions() {
+            return {
+              remarkPlugins: [
+                [
+                  remarkCodeHike,
+                  {
+                    theme: "one-dark-pro",
+                    lineNumbers: true,
+                    showCopyButton: true,
+                    autoImport: true,
+                  },
+                ],
+              ],
+            };
+          },
+        });
 
-    posts.push({
-      ...frontmatter,
-      filename: file.replace(".mdx", ""),
-      published: frontmatter.date.toISOString(),
-    });
-  }
+        return {
+          ...frontmatter,
+          filename: file.replace(".mdx", ""),
+          published: frontmatter.date.toISOString(),
+        };
+      }),
+  );
 
   return posts.sort((a, b) =>
     new Date(a.published) > new Date(b.published) ? -1 : 1,
