@@ -1,19 +1,9 @@
-FROM node:22-alpine AS base
+FROM ghcr.io/rochacbruno/marmite
 
-RUN apk add --no-cache libc6-compat
+WORKDIR /input
 
-WORKDIR /app
+COPY . ./
 
-COPY package.json package-lock.json ./
-
-RUN npm ci
-
-COPY . .
-
-RUN npm run build && npm cache clean --force
- 
 EXPOSE 3000
 
-ENV PORT 3000
-
-CMD ["npm", "run", "start"]
+CMD ["--serve", "--bind", "0.0.0.0:3000"]

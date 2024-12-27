@@ -2,7 +2,11 @@
 title: Run Shopify App without the App Bridge
 date: 2024-10-07
 description: Let's get rid of Shopify's app bridge. 
+tags: shopify
+author: nullndr
 ---
+
+# Run Shopify App without the App Bridge
 
 This post wants to explain how to run a Shopify'app outside the [cli](https://github.com/Shopify/cli) and the [app bridge](https://shopify.dev/docs/api/app-bridge).
 

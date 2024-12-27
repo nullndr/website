@@ -2,7 +2,10 @@
 title: How this site is built
 date: 2024-09-29
 description: A technical explanation of how this site works
+author: nullndr
 ---
+
+# How this site is built
 
 This site is built with [remix.run](https://remix.run). There is no database for the posts, instead the posts are written directly in [MDX](https://mdxjs.com/). 
 

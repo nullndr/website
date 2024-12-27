@@ -1,0 +1,19 @@
+name: "Nullndr's blog"
+tagline: "Another blog by Nullndr"
+url: "https://nullndr.com"
+pagination: 10
+enable_search: true
+menu:
+  - ["Tags", "tags.html"]
+  - ["Archive", "archive.html"]
+  - ["GitHub", "https://github.com/nullndr"]
+authors:
+  nullndr:
+    name: "Andrea Foletto"
+    avatar: "https://avatars.githubusercontent.com/u/62137266?v=4"
+    links:
+      - ["Telegram", "https://t.me/nullndr"]
+      - ["Linkedin", "https://linkedin.com/in/nullndr"]
+      - ["X", "https://x.com/nullndr"]
+      - ["StackOverflow", "https://stackoverflow.com/users/10503039/nullndr"]
+      - ["GitHub", "https://github.com/nullndr"]

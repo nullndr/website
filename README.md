@@ -1,3 +1,3 @@
-# yaaaw.it
+# nullndr.com
 
-This is my personal website made with [remix.run](remix.run/docs) 🚀
+This is my personal website made with [marmite](https://rochacbruno.github.io/marmite/) 🚀
