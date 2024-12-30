@@ -108,7 +108,7 @@ Do you see the point here? We actually do not need the session if we already hav
 
 Let's write now some logic to handle this, we want to run our app with a `shopifyDomain` we define, something like:
 
-```typescript
+```ts
 export async function requireShopifyDomain(request: Request) {
   if(process.env.NODE_ENV === "development" && process.env.RUN_AS_SHOPIFY_DOMAIN) {
     const shopifyDomain = process.env.RUN_AS_SHOPIFY_DOMAIN;
@@ -124,7 +124,7 @@ Excellent, we can retrieve now the `shopifyDomain` we define as an env, just in 
 
 Let's write now a simple utility to handle all loaders requests in the same way:
 
-```typescript
+```ts
 export function handleLoaderRequest<T>(
   request: Request,
   callback: (shopifyDomain: string) => Promise<T>
@@ -163,7 +163,7 @@ export async function findShop(shopifyDomain: string) {
 After this let's set up the GraphQL schema for Genql, simply run the following command:
 
 ```bash
-npx genql --endpoint "https://<name>.myshopify.com/admin/api/2024-07/graphql.json" -S --output "app/lib/genql/generated.server" -H "X-Shopify-Access-Token: <access token>"  --esm
+npx genql --endpoint "https://<name>.myshopify.com/admin/api/2024-07/graphql.json" -S --output "app/lib/genql/generated.server" -H "X-Shopify-Access-Token: <access token>" --esm
 ```
 
 Replace the `<name>.myshopify.com` and `<access token>` with some real data (you can also use the data from a test store, the command is just needed to generate the graphql schema).
