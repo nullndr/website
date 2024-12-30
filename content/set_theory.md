@@ -309,8 +309,8 @@ Formally it is defined as $A \times B = \\{ (a,b) ∣ a \in A, b \in B \\}$.
 $$
 \begin{aligned}
 A &= \\{ 1, 2 \\} \\\\
-B &= \\{ 3, 4, 5 \\} \\\\
-A \times B &= \\{ (1,3), (1,4), (1,5), (2,3), (2,4), (2,5) \\}
+B &= \\{ 3, 4 \\} \\\\
+A \times B &= \\{ (1,3), (1,4), (2,3), (2,4) \\}
 \end{aligned}
 $$
 
