@@ -7,7 +7,7 @@ menu:
   - ["Tags", "tags.html"]
   - ["Archive", "archive.html"]
   - ["GitHub", "https://github.com/nullndr"]
-  - ["Gitea", "https://gitea.nullndr.com/nullndr"]
+  - ["Git", "https://git.nullndr.com/nullndr"]
 authors:
   nullndr:
     name: "Andrea Foletto"
@@ -18,4 +18,4 @@ authors:
       - ["X", "https://x.com/nullndr"]
       - ["StackOverflow", "https://stackoverflow.com/users/10503039/nullndr"]
       - ["GitHub", "https://github.com/nullndr"]
-      - ["Gitea", "https://gitea.nullndr.com/nullndr"]
+      - ["Git", "https://git.nullndr.com/nullndr"]
