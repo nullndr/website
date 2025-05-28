@@ -1,6 +1,11 @@
+# syntax=docker/dockerfile:1-labs
+# check=error=true
+
 FROM ghcr.io/rochacbruno/marmite
 
-WORKDIR /input
+ENV TZ="Etc/UTC"
+
+WORKDIR /app
 
 COPY . ./
 
