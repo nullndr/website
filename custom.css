@@ -3,3 +3,7 @@
   text-align: center;
   margin-bottom: var(--pico-block-spacing-vertical);
 }
+
+.not-by-ai-image {
+  text-align: right;
+}
