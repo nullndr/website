@@ -7,3 +7,11 @@
 .not-by-ai-image {
   text-align: right;
 }
+
+a code {
+  color: var(--pico-primary);;
+}
+
+a:hover code {
+  text-decoration: underline;
+}
