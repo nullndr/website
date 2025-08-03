@@ -4,8 +4,10 @@
   margin-bottom: var(--pico-block-spacing-vertical);
 }
 
-.not-by-ai-image {
-  text-align: right;
+.markdown-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 a code {
