@@ -10,6 +10,12 @@
   align-items: center;
 }
 
+.typo-link a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 a code {
   color: var(--pico-primary);;
 }
