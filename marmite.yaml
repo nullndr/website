@@ -6,8 +6,6 @@ enable_search: true
 menu:
   - ["Tags", "tags.html"]
   - ["Archive", "archive.html"]
-  - ["GitHub", "https://github.com/nullndr"]
-  - ["Git", "https://git.nullndr.com/nullndr"]
 authors:
   nullndr:
     name: "Nullndr"
@@ -17,5 +15,4 @@ authors:
       - ["Linkedin", "https://linkedin.com/in/nullndr"]
       - ["X", "https://x.com/nullndr"]
       - ["StackOverflow", "https://stackoverflow.com/users/10503039/nullndr"]
-      - ["GitHub", "https://github.com/nullndr"]
       - ["Git", "https://git.nullndr.com/nullndr"]
