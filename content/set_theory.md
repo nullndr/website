@@ -37,7 +37,7 @@ Two special sets are defined: the [[empty set|#empty-set]] and the [[universe se
 
 ### Empty set
 
-The empty set, denotated with $\\{\\}$ or with the $\varnothing$ symbol, is a special set that has no element.
+The empty set, denoted with $\\{\\}$ or with the $\varnothing$ symbol, is a special set that has no element.
 
 ### Universe set
 
@@ -47,7 +47,7 @@ The universal set, denoted by $U$, is a set that has as elements all unique elem
 
 Before going further inside the set theory, it is worth introducing the notations for them.
 
-Sets are typically denotated by an italic capital letter, like $A$, $B$, $C$ etc. 
+Sets are typically denoted by an italic capital letter, like $A$, $B$, $C$ etc. 
 
 To list the elements of a given set the enumeration notation is used. This list the elements of a set between curly braces. For example, to reppresent the set $A$ of all natural numbers less than 8 we write the following:
 
@@ -55,13 +55,13 @@ $$ A = \\{ 1, 2, 3, 4, 5, 6, 7 \\} $$
 
 ## Element membership
 
-We denotate that an element is a member of a given set with the $\in$ symbol: given the previous set $A$, we write that
+We denote that an element is a member of a given set with the $\in$ symbol: given the previous set $A$, we write that
 
 $$ 1 \in A $$
 
 This can be read as 1 is a member of set $A$, or 1 is inside set $A$.
 
-The symbol $\notin$ is the opposite of the $\in$ symbol, it denotates an element that is not a member of a given set: given the previous set $A$, we write that
+The symbol $\notin$ is the opposite of the $\in$ symbol, it denotes an element that is not a member of a given set: given the previous set $A$, we write that
 
 $$ 8 \notin A $$
 
@@ -159,7 +159,7 @@ Just like algebra has his operations on numbers, sets have their own operations.
 
 The union of two or more sets is a set that contains all elements in the given sets, with no duplicated element. 
 
-It's denotated with the $\cup$ symbol.
+It's denoted with the $\cup$ symbol.
 
 $$
 \begin{aligned}
@@ -191,7 +191,7 @@ $$
 
 The intersection of two or more sets is a set that contains all elements that belongs in all given sets. 
 
-It's denotated with the $\cap$ symbol.
+It's denoted with the $\cap$ symbol.
 
 $$
 \begin{aligned}
@@ -226,7 +226,7 @@ $$
 
 The set difference of two sets $A$ and $B$ is a set that contains all elements of $A$ that are not inside $B$.
 
-It's denotated with the $−$ symbol and is formally defined as $A − B = \\{ x ∣ x \in A : x \notin B \\}$
+It's denoted with the $−$ symbol and is formally defined as $A − B = \\{ x ∣ x \in A : x \notin B \\}$
 
 $$
 \begin{aligned}
