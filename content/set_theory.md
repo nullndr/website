@@ -64,6 +64,7 @@ $$
 In this notation, the vertical bar $|$ is read as "such that", and the whole formula can be read as $A$ is the set of all $x$ such that $x$ are less than 8.
 
 ---
+
 ## Element membership
 
 We denote that an element is a member of a given set with the $\in$ symbol: given the previous set $A$, we write that
@@ -89,6 +90,7 @@ B &= \{ 2, 1 \} \\\\
 A &= B
 \end{aligned}
 $$
+
 ---
 
 ## Cardinality
@@ -112,8 +114,8 @@ $$
 
 > The cardinality of a set may also be denoted by $card(A)$ or $n(A)$
 
-
 ---
+
 ## Subsets and super sets
 
 Between two sets there may exist a relation called **set inclusion**: if all elements inside set $A$ are also elements of $B$, then $A$ is a subset of $B$, denoted with $A \subseteq B$.
@@ -165,6 +167,7 @@ $$
 Note that the empty set $\varnothing$ is a proper subset of any set except itself.
 
 ---
+
 ## Power set
 
 Given a set $A$, there exists a set called *power set* that contains as elements all subsets of $A$, including the empty set $\emptyset$ and the set $A$ itself. The power set of a set $A$ is denoted as $\mathcal{P}(A)$:
@@ -185,6 +188,7 @@ The cardinality of the power set, denoted as $|\mathcal{P}(A)|$ is always $2^{|A
 A *partition* of a set $A$ is a set of non-empty subsets of $A$ such that every element $a$ of $A$ belongs to exactly one of these subset (the subsets are non-empty mutually disjoint sets).
 
 ---
+
 # Operations
 
 Just like algebra has his operations on numbers, sets have their own operations.
