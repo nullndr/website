@@ -1,7 +1,7 @@
 ---
 title: Basic Algebraic Structures
 date: 2026-03-12
-description: How we operate on sets
+description: Simple notes for basic algebraic structures 
 author: nullndr
 tags:
   - math
