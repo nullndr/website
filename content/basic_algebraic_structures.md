@@ -79,10 +79,11 @@ A semigroup in which every element is left and right cancellable is called a *ca
 Let $a \in S$, we define the **powers** of an element $a$ in the following way:
 
 $$
-\begin{aligned}
-a^1 &= a \\
-\forall n \in \mathbb{N} \text{ with } n>1, \quad a^{n+1} &= a^na
-\end{aligned}
+a^1 = a
+$$
+
+$$
+\forall n \in \mathbb{N} \text{ with } n>1, \quad a^{n+1} = a^na
 $$
 
 Because of associativity, expressions like $a \cdot a \cdot a$ do not depend on how we place parentheses, so $a^n$ is well-defined.
