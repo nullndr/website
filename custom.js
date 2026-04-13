@@ -7,7 +7,7 @@
 			.replace(".html", "")
 			.replaceAll("-", "_");
 
-		const gitLink = `https://git.nullndr.com/nullndr/website/src/branch/main/content${fileName}.md`;
+		const gitLink = `https://github.com/nullndr/website/edit/main/content${fileName}.md`;
 
 		anchorElement.href = gitLink;
 	}
