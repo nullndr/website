@@ -1,8 +1,10 @@
 name: "Nullndr's blog"
 tagline: "Another blog by Nullndr"
 url: "https://nullndr.com"
+https: true
 pagination: 10
 enable_search: true
+language: "en"
 menu:
   - ["Tags", "tags.html"]
   - ["Archive", "archive.html"]
@@ -10,6 +12,7 @@ authors:
   nullndr:
     name: "Nullndr"
     avatar: "https://avatars.githubusercontent.com/u/62137266?v=4"
+    bio: "Math student and ex software architect"
     links:
       - ["Telegram", "https://t.me/nullndr"]
       - ["Linkedin", "https://linkedin.com/in/nullndr"]
