@@ -27,22 +27,15 @@ $$
 
 that takes two elements of $S$ and returns another element of $S$.
 
-A fundamental requirement we will often impose is **closure**: applying the operation to elements of $S$ must always produce an element still in $S$.
-
 ---
 
 ## Semigroups
 
-A **semigroup** is a pair $(S, \cdot)$ where $S$ is a set and $\cdot$ is a binary operation such that the following properties hold:
+A **semigroup** is a pair $(S, \cdot)$ where $S$ is a set and $\cdot$ is a binary *associative* operation:
 
-1. **Closure**: for all $a, b \in S$,
-  $$
-  a \cdot b \in S
-  $$
-2. **Associativity**: for all $a, b, c \in S$,
-  $$
-  (a \cdot b) \cdot c = a \cdot (b \cdot c)
-  $$
+$$
+\forall a, b, c \in S \implies (a \cdot b) \cdot c = a \cdot (b \cdot c)
+$$
 
 > Associativity is the key structural property here.
 
@@ -56,34 +49,40 @@ $$
 
 > The term abelian is more commonly used in the context of groups, but the notion of commutativity applies to any algebraic structure with a binary operation.
 
+We can also use the addition notation $+$, with it the *associative* property can be defined as the following:
+
+$$
+\forall a, b, c \in S \implies (a + b) + c = a + (b + c)
+$$
+
 ### Cancellation Laws
 
 Given a semigroup $(S, \cdot)$ and an element $x \in S$, we say that:
 
-- $x$ is **left cancellable** if, for all $a, b \in S$,
+- $x$ is **left cancellable** if, $\forall a, b \in S$,
   $$
   xa = xb \implies a = b
   $$
 
-- $x$ is **right cancellable** if, for all $a, b \in S$,
+- $x$ is **right cancellable** if, $\forall a, b \in S$,
   $$
   ax = bx \implies a = b
   $$
 
 A semigroup in which every element is left and right cancellable is called a *cancellative semigroup*.
 
-> Not all semigroups satisfy cancellation. This is a strong additional property.
+> Not all semigroups satisfy the cancellation law. This is a strong additional property.
 
 ### Powers in a Semigroup
 
-Let $a \in S$, we define the **powers** of an element $a$ in the following way:
+Let $a \in S$, we define the **positive powers** of an element $a$ in the following way:
 
 $$
-a^1 = a
-$$
-
-$$
-\forall n \in \mathbb{N} \text{ with } n>1, \quad a^{n+1} = a^na
+a^{n} =
+\begin{cases}
+a^1 = a \\
+a^{n+1} = a^na
+\end{cases}
 $$
 
 Because of associativity, expressions like $a \cdot a \cdot a$ do not depend on how we place parentheses, so $a^n$ is well-defined.
@@ -94,11 +93,21 @@ An element $x \in S$ is called *idempotent* if $x^2 = x$.
 
 **Example:** In $(\mathbb{N}, +)$, the element $0$ is idempotent since $0 + 0 = 0$.
 
+With the addition notation $+$ the powers are called *multiplies*, defined as
+
+$$
+a^{n} =
+\begin{cases}
+a^1 = a \\
+a^{n+1} = a^n + a
+\end{cases}
+$$
+
 ---
 
 ## Monoids
 
-A semigroup $(M, \cdot)$ is called a **monoid** if there exists $e \in M$ (called the **identity**) such that
+A semigroup $(M, \cdot)$ is called a **monoid** if there exists $e \in M$ (called the **identity element**) such that
 
 $$
 \forall a \in M \quad ea = ae = a
@@ -147,6 +156,8 @@ $$
 
 The uniqueness of the inverse of an element $a$ allow us to denote it by $a^{-1}$.
 
+> The name **inverse** is used withing the multiplication notation, if we use the addition notation, then the inverse element is called the **opposite**
+
 ---
 
 ## Groups
@@ -156,7 +167,7 @@ A **group** is a monoid $(G, \cdot, e)$ where every element has an inverse.
 Formally, a group $(G, \cdot, e)$ satisfies:
 
 1. Associativity of the $\cdot$ operation
-2. Identity element $e$
+2. There exists the identity element $e$
 3. For every $a \in G$, there exists $a^{-1} \in G$ such that
   $$
   aa^{-1} = a^{-1}a = e
@@ -185,11 +196,9 @@ Let $(G, \cdot, e)$ be a group, a **subgroup** is a subset $H \subseteq G  \ne \
 1. $\forall a, b \in H$, $ab \in H$
 2. $\forall a \in H$, $a^{-1} \in H$
 
-It is clear that $e \in H$ because $\forall a \in H$, $aa^{-1} = e \in H$.
+From these two properties, it follows that $e \in H$ because $\forall a \in H$, $aa^{-1} = e \in H$.
 
-A subgroup $H \le G$ is called **proper** if $H \neq G$.
-
-We write $H \le G$ to denote that $H$ is a subgroup of $G$, and $H < G$ if $H$ is a proper subgroup.
+If $H$ is a subgroup of $G$, then we write it as $H \le G$. A subgroup $H \le G$ is called **proper** if $H \neq G$. We write $H \le G$ to denote that $H$ is a subgroup of $G$, and $H < G$ if $H$ is a proper subgroup.
 
 It is easy to verify that a nonempty subset $H \subseteq G$ is a subgroup if and only if
 $$
@@ -202,6 +211,10 @@ Conversely, suppose $H \neq \emptyset$ and $a^{-1}b \in H$ for all $a, b \in H$.
 - Taking $a = b$, we get $e \in H$
 - Taking $b = e$, we get $a^{-1} \in H$
 - Then closure follows since $ab = (a^{-1})^{-1}b \in H$
+
+It is clear that for each group $(G, \cdot, e)$ there exist two subgroups: $({e}, \cdot, e)$ and $(G, \cdot, e)$.
+
+> Depending on the source, the subgroups $({e}, \cdot, e)$ and $(G, \cdot, e)$ may be called **trivial** or **improper subgroups**.
 
 ### Intersection of Subgroups
 
@@ -238,7 +251,7 @@ which contradicts the fact that $ K $ is a proper subgroup of $G$.
 
 ## Rings
 
-A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is an binary operation $R$ and $\cdot$ is an associative binary operation on $R$ such that the following properties hold:
+A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is an binary operation and $\cdot$ is an associative binary operation such that the following properties hold:
 
 1. $(R, +, 0)$ is an abelian group
 2. $(R, \cdot)$ is a semigroup
@@ -250,7 +263,7 @@ A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is an binary oper
   (a + b)c = ac + bc
   $$
 
-If there exists an element $1 \in R$ such that $1 \ne 0$ and $\forall a \in R$, $1 \cdot a = a \cdot 1 = a$ then $A$ is called a **unitary ring** and $1$ is called the **unity** of the ring.
+If there exists an element $1 \in (R, \cdot)$ such that $1 \ne 0$ (with $0 \in (R, +, 0)$) and $\forall a \in R$, $1 \cdot a = a \cdot 1 = a$ then $A$ is called a **unitary ring** and $1$ is called the **unity** of the ring.
 
 This element is **unique**, like we said in the groups.
 
@@ -264,7 +277,7 @@ $$
 U(R) = \{\forall a \in R | \exists b \in R : ab = ba = 1 \}
 $$
 
-> The set $U(R)$ is a group under the $\cdot$ application
+The set $U(R)$ is a group under the $\cdot$ application
 
 ---
 
@@ -272,7 +285,7 @@ $$
 
 Let $(R, +, \cdot)$ be a ring, a **subring** is a subset $S \subseteq R \ne \emptyset$ that is itself a ring with the same operations, such that
 
-1. S is a subgroup of $(R, +, 0)$
+1. $S$ is a subgroup of $(R, +, 0)$
 2. $\forall a, b \in S$, $ab \in S$
 
 In the case $(R, +, \cdot)$ is a unitary ring, then the following is required as well
