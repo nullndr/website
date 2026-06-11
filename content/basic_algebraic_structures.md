@@ -189,69 +189,9 @@ $$
 
 ---
 
-## Subgroups
-
-Let $(G, \cdot, e)$ be a group, a **subgroup** is a subset $H \subseteq G  \ne \emptyset$ that is itself a group under the same operation, such that:
-
-1. $\forall a, b \in H$, $ab \in H$
-2. $\forall a \in H$, $a^{-1} \in H$
-
-From these two properties, it follows that $e \in H$ because $\forall a \in H$, $aa^{-1} = e \in H$.
-
-If $H$ is a subgroup of $G$, then we write it as $H \le G$. A subgroup $H \le G$ is called **proper** if $H \neq G$. We write $H \le G$ to denote that $H$ is a subgroup of $G$, and $H < G$ if $H$ is a proper subgroup.
-
-It is easy to verify that a nonempty subset $H \subseteq G$ is a subgroup if and only if
-$$
-\forall a, b \in H,\ a^{-1}b \in H
-$$
-
-Indeed, if $H \le G$, then for $a, b \in H$, we have $a^{-1} \in H$ and thus $a^{-1}b \in H$.
-
-Conversely, suppose $H \neq \emptyset$ and $a^{-1}b \in H$ for all $a, b \in H$. Then:
-- Taking $a = b$, we get $e \in H$
-- Taking $b = e$, we get $a^{-1} \in H$
-- Then closure follows since $ab = (a^{-1})^{-1}b \in H$
-
-It is clear that for each group $(G, \cdot, e)$ there exist two subgroups: $({e}, \cdot, e)$ and $(G, \cdot, e)$.
-
-> Depending on the source, the subgroups $({e}, \cdot, e)$ and $(G, \cdot, e)$ may be called **trivial** or **improper subgroups**.
-
-### Intersection of Subgroups
-
-Let $(G, \cdot, e)$ be a group and let $\{H_i\}_{i \in I}$ be a family of subgroups of $G$, then
-$$
-H = \bigcap_{i \in I} H_i
-$$
-
-is also a subgroup of $G$.
-
-Indeed, since $e \in H_i$ for all $i \in I$, we have $e \in H$. Moreover, if $x, y \in H$, then $x, y \in H_i$ for all $i \in I$, hence $x^{-1}y \in H_i$ for all $i \in I$, so $x^{-1}y \in H$.
-
-### Unions of Subgroups
-
-Let $(G, \cdot, e)$ be a group, and let $H$ and $K$ be subgroups of $G$, then
-$$
-H \cup K \text{ is a subgroup of } G \iff H \subseteq K \text{ or } K \subseteq H
-$$
-
-This implies that a group cannot be written as the union of two proper subgroups.
-
-Indeed, suppose by contradiction that there exist two proper subgroups $H < G$ and $K < G$ such that
-$$
-G = H \cup K
-$$
-
-Then by the previous statement, either $H \subseteq K$ or $K \subseteq H$. Suppose $H \subseteq K$, then
-$$
-G = H \cup K = K
-$$
-which contradicts the fact that $ K $ is a proper subgroup of $G$.
-
----
-
 ## Rings
 
-A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is an binary operation and $\cdot$ is an associative binary operation such that the following properties hold:
+A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is a binary operation and $\cdot$ is an associative binary operation such that the following properties hold:
 
 1. $(R, +, 0)$ is an abelian group
 2. $(R, \cdot)$ is a semigroup
@@ -263,42 +203,56 @@ A **ring** is a triple $(R, +, \cdot)$ where $R$ is a set, $+$ is an binary oper
   (a + b)c = ac + bc
   $$
 
-If there exists an element $1 \in (R, \cdot)$ such that $1 \ne 0$ (with $0 \in (R, +, 0)$) and $\forall a \in R$, $1 \cdot a = a \cdot 1 = a$ then $A$ is called a **unitary ring** and $1$ is called the **unity** of the ring.
-
-This element is **unique**, like we said in the groups.
-
 Given two elements $a, b \in R$ we say that they **commute** if $ab = ba$. A ring is called **commutative ring** if $\forall a, b \in R$, $ab = ba$.
-
-### Units of a Ring
-
-We now define the set of **units** of $R$, denoted by $U(R)$ that is the set of all elements in $R$ that are invertible with respect to the $\cdot$ operation:
-
-$$
-U(R) = \{\forall a \in R | \exists b \in R : ab = ba = 1 \}
-$$
-
-The set $U(R)$ is a group under the $\cdot$ application
 
 ---
 
-## Subrings
+## Unitary rings
 
-Let $(R, +, \cdot)$ be a ring, a **subring** is a subset $S \subseteq R \ne \emptyset$ that is itself a ring with the same operations, such that
+The $\cdot$ operation in our ring $(R, + \cdot)$ may not have an *identity element 1* such that $\forall a \in R$, $a \cdot e = e \cdot a = a$, if this element does exist, $e$ is called the **unity** of the ring.
 
-1. $S$ is a subgroup of $(R, +, 0)$
-2. $\forall a, b \in S$, $ab \in S$
+Like for groups, this element is **unique** and with it, the subgroup $(R, \cdot)$ becomes a monoid $(R, \cdot, 1)$, we can then call the ring $(R, +, \cdot)$ a **unitary ring**.
 
-In the case $(R, +, \cdot)$ is a unitary ring, then the following is required as well
+---
 
-3. $1 \in S$
+## Commutative rings
 
-### Intersection of Subrings
+Given a ring $(R, +, \cdot)$ we already know that the group under the $+$ operation is *abelian*, such that $\forall a, b \in R$, $a + b = b + a$.
 
-Let $(R, +, \cdot)$ be a ring and let $\{S_i\}_{i \in I}$ be a family of subrings of $R$, then
-$$
-S = \bigcap_{i \in I} S_i
-$$
+We did not put such constraint for the $\cdot$ operation, if such property holds, thus $\forall a, b \in R$, $a \cdot b = b \cdot a$ we call the ring $(R, +, \cdot)$ a **commutative ring**.
 
-is also a subring of $R$.
+---
 
-Indeed, $S$ is a subgroup of $(R, +, 0)$. For $a, b \in S$ then $\forall i \in I$, $a, b \in S_i$, then $\forall i \in I$, $ab \in S_i$. Thus $ab \in S$. This demonstrates that $S$ is a subring of $R$. If $R$ is a unitary ring, then $\forall i \in I$, $1 \in S_i$ and then $1 \in S$.
+## Integral domains
+
+To define an integral domain we must first take a step back and define what a *zero divisor* is. A **zero divisor** is an element $a \ne 0 \in R$ such that there exists $x \ne 0 \in R$ with $ax = 0$.
+
+The basic set of numbers we can think of is the integers $\mathbb{Z}$ which *does not* include zero divisor, indeed $\forall a, b \in \mathbb{Z}, ab = 0 \iff a = 0 \text{ or } b = 0$. 
+
+We can see an example in $\mathbb{Z}/4\mathbb{Z}$ through a [Cayley table](https://en.wikipedia.org/wiki/Cayley_table):
+
+<table>
+  <tr><td>·</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+  <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+  <tr><td>2</td><td>0</td><td>2</td><td>0</td><td>2</td></tr>
+  <tr><td>3</td><td>0</td><td>3</td><td>2</td><td>1</td></tr>
+</table>
+
+We note that $2 \cdot 2 = 0$ so $2$ is a *zero divisor*, with it we can now finally define an integral domain.
+
+An **integral domain** is a commutative ring $(R, +, \cdot)$ without zero divisors, like $\mathbb{Z}$.
+
+---
+
+## Division rings
+
+A **division ring** is a unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \{0\}, \cdot, 1)$ is a group.
+
+> The commutative property is not required, if it is present, then the structure becomes a [field](#fields).
+
+---
+
+## Fields
+
+A **field** is a commutative unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \{0\}, \cdot, 1)$ is an abelian group.
