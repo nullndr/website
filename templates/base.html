@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{url_for(path='static/favicon.ico')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content="Marmite" />
+    {% block seo %}
+    <meta property="og:title" content="{{ site.name }}">
+    <meta property="og:description" content="{{ site.tagline }}">
+    {% if site.card_image %}
+    <meta property="og:image" content="{{url_for(path=site.card_image, abs=true)}}">
+    {% endif %}
+    {% if site.url %}
+    <meta property="og:url" content="{{site.url}}">
+    {% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{site.name}}">
+    {% if site.extra.fediverse_verification %}
+    <link rel="me" href="{{site.extra.fediverse_verification}}">
+    {% endif %}
+    {% endblock %}
+    {%- block head %}
+    <title>{% if title %}{{title}} | {%endif%}{{ site.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for(path='static/pico.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for(path='static/marmite.css')}}">
+    {% if site.extra.colorscheme %}
+    <link rel="stylesheet" type="text/css" href="{{url_for(path='static/colorschemes/' ~ site.extra.colorscheme ~ '.css')}}">
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{url_for(path='static/custom.css')}}">
+    {% endblock -%}
+    {%- block feeds %}
+    {%include 'base_feeds.html' ignore missing%}
+    {% endblock %}
+    {% if htmlhead is defined %}
+    {{ htmlhead }}
+    {% endif %}
+</head>
+<body>
+    {% if announce is defined %}
+    <div class="container-fluid announcement-wrapper">
+        <div class="announcement">{{ announce }}</div>
+    </div>
+    {% endif %}
+    <main class="container">
+        {% if header is defined %}
+           {{ header}}
+        {% else %}
+        <header class="header-content">
+            <nav class="header-nav">
+                <ul class="header-name">
+                    <li>
+                        <hgroup class="h-card">
+                            <h2>
+                                <a href="{{url_for(path='')}}" class="contrast p-name u-url">
+                                    {% if site.logo_image %}
+                                        <img src="{{url_for(path=site.logo_image)}}" alt="{{ site.name }}" class="u-photo">
+                                    {% else %}
+                                        {{ site.name }}
+                                    {% endif %}
+                                </a>
+                            </h2>
+                            {% if site.tagline %} <p class="p-note">{{ site.tagline }}</p> {% endif %}
+                        </hgroup>
+                    </li>
+                </ul>
+                <button id="menu-toggle" class="hamburger">&#9776;</button>
+
+                <ul class="header-menu" id="header-menu">
+                    {% for item in menu %}
+                      {% set name = item.0 %}
+                      {% set url = item.1 %}
+                    <li>
+                        {% if current_page and current_page == url %}
+                        <button class="menu-item active selected">{{name | safe }}</button>
+                        {% else %}
+                        <a class="menu-item secondary" {% if url is starting_with("http") %} href="{{url}}" target="_blank" {% else %} href="{{url_for(path=url)}}"{% endif %}>{{ name | safe }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                    {% if site.extra.colormodetoggle %}
+                        <li><span class="theme-toggle secondary" title="dark mode">&#9789;</span></li>
+                    {% endif %}
+                    {% if site.enable_search %}
+                    <li><a href="#" id="search-toggle" class="secondary" title="Search (Ctrl + Shift + F)"> <span class="search-txt">Search</span><span class="search-magnifier"></span></a></li>
+                    {% endif %}
+                    <div class="underline"></div>
+                </ul>
+            </nav>
+            {% if site.enable_search %}
+            <div class="marmite-background-overlay" id="overlay-close"></div>
+            <div class="marmite-search-bar hidden">
+                <span>{{site.search_title}}</span>
+                <button class="marmite-close-button" id="search-close">X</button>
+                <input placeholder="Search" id="marmite-search-input" />
+                <div class="marmite-search-bar-result">
+                    <ul id="marmite-search-bar-result"></ul>
+                </div>
+            </div>
+            {% endif %}
+        </header>
+        {% endif %}
+        <section class="main-content">
+            {% block main -%}{%- endblock %}
+        </section>
+        {% if footer is defined %}
+           {{ footer}}
+        {% else %}
+        <footer class="footer-content grid">
+            {{ site.footer | safe }}
+            {% if site.extra.colorscheme_toggle %}
+            <div class="colorscheme-toggle-div">
+                colorscheme: <select name="colorscheme" class="colorscheme-toggle"><option value="default">default</option></select>
+                <span class="theme-toggle secondary" title="dark mode">&#9789;</span>
+            </div>
+            {% endif %}
+        </footer>
+        {% endif %}
+    </main>
+    {%- block tail %}
+    <script src="{{url_for(path='static/marmite.js')}}"></script>
+    <script src="{{url_for(path='static/custom.js')}}"></script>
+    {% if site.enable_search %}
+    <script type="module" src="{{url_for(path='static/search.js')}}"></script>
+    {% endif %}
+    {% if site.extra.colorscheme_toggle %}    
+    <script type="application/javascript" >
+        colorschemeSwitcher();
+    </script>
+    {% endif %}
+    {% if site.extra.colormode %}
+        <script type="application/javascript">
+            // If there is already a scheme saved in localstorage, load that, else load config
+            if (themeSwitcher.scheme == "auto") {
+                themeSwitcher.scheme = "{{ site.extra.colormode }}";
+                themeSwitcher.updateIcon();
+            }
+        </script>
+    {% endif %}
+    {% endblock -%}
+    {% if htmltail is defined %}
+    {{ htmltail }}
+    {% endif %}
+</body>
+</html>
