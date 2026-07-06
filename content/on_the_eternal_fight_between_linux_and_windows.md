@@ -10,9 +10,20 @@ banner_image: media/linux-win.png
 
 In April 2026, French Interministerial Directorate for Digital Affairs (DINUM), announced that it would be withdrawing from proprietary operating systems to turn to the  [GNU/Linux operating system](https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/france-phases-out-proprietary-operating-systems-workstations) as part of the broader push for [Europe Tech Sovereignty](https://digital-strategy.ec.europa.eu/en/policies/eu-tech-sovereignty). The first thing we will see is the economic impact. While we still do not have a precise number of Windows workstation that will be replaced, in 2009 the [Germanderie estimated a saving of 50 milions of euro](https://interoperable-europe.ec.europa.eu/collection/egovernment/news/fr-gendarmerie-saves-million). So, we can conservatively estimate a similar amount.
 
-But France will not be alone, in German, Schleswig-Holstein has already become one of the most advanced public administrations in Europe when it comes to [open source adoption](https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/schleswig-holsteins-open-source-strategy-year?utm_source=chatgpt.com), and it won't be the last, look at Denmark an [another example](https://politiken.dk/viden/tech/art10411353/Nu-er-det-nok-K%C3%B8benhavn-og-Aarhus-vil-g%C3%B8re-sig-uafh%C3%A6ngige-af-Microsoft?shareToken=tKwKubAE1XVA). This is something we can see on the numbers: on June 2026, linux has reached the **4.39%** of the market share, while windows has dropped to to **56.55%**.
+But France will not be alone, in German, Schleswig-Holstein has already become one of the most advanced public administrations in Europe when it comes to [open source adoption](https://interoperable-europe.ec.europa.eu/collection/open-source-observatory-osor/news/schleswig-holsteins-open-source-strategy-year?utm_source=chatgpt.com), and it won't be the last, look at Denmark as [another example](https://politiken.dk/viden/tech/art10411353/Nu-er-det-nok-K%C3%B8benhavn-og-Aarhus-vil-g%C3%B8re-sig-uafh%C3%A6ngige-af-Microsoft?shareToken=tKwKubAE1XVA). This is something we can see on the numbers: on June 2026, linux has reached the **4.39%** of the market share, while windows has dropped to to **56.55%**.
 
-<div id="desktop-os_combined-ww-monthly-202506-202606" width="100%" height="400" style="width:100%; height: 400px;"></div><!-- You may change the values of width and height above to resize the chart --><p>Source: <a href="https://gs.statcounter.com/os-market-share/desktop/worldwide?ref=itsfoss.com">StatCounter Global Stats - OS Market Share</a></p><script type="text/javascript" src="https://www.statcounter.com/js/fusioncharts.js"></script><script type="text/javascript" src="https://gs.statcounter.com/chart.php?desktop-os_combined-ww-monthly-202506-202606&chartWidth=600"></script>
+<figure>
+  <img
+    src="/media/linux-market-share-2026.png"
+    alt="Desktop OS market share worldwide from June 2025 to June 2026"
+  />
+  <figcaption>
+    Source:
+    <a href="https://gs.statcounter.com/os-market-share/desktop/worldwide">
+      StatCounter Global Stats - Desktop OS Market Share
+    </a>
+  </figcaption>
+</figure>
 
 One factor behind these numbers is also the old rhetoric: *"You can't play on Linux"*. This has been proved to be wrong thanks to *Valve* and it's [Proton](https://github.com/ValveSoftware/Proton) compatibility tool, which also enabled the development of [SteamOS](https://store.steampowered.com/steamos), a linux-based os for the [Steam Deck](https://store.steampowered.com/steamdeck).
 
