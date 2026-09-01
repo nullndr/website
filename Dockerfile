@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY . ./
 
-RUN marmite . /site
+RUN ["/bin/marmite", ".", "site"]
 
 FROM nginx:alpine
 
