@@ -11,7 +11,7 @@ RUN ["/bin/marmite", ".", "site"]
 
 FROM nginx:alpine
 
-COPY --from=builder /site /usr/share/nginx/html
+COPY --from=builder /app/site /usr/share/nginx/html
 
 EXPOSE 80
 
