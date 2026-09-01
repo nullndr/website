@@ -10,8 +10,6 @@ extra:
   math: true
 ---
 
-# Algebraic identities
-
 Once we consider a [commutative ring](./basic-algebraic-structures.html#commutative-rings), several algebraic identities can be derived from the properties of its operations.
 
 Algebraic identities are equations that are true for all values of their variables. Unlike ordinary equations, which are satisfied only by specific values of their variables, an identity expresses a relation that holds universally.
