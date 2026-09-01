@@ -1,14 +1,18 @@
 # syntax=docker/dockerfile:1-labs
 # check=error=true
 
-FROM ghcr.io/rochacbruno/marmite
-
-ENV TZ="Etc/UTC"
+FROM ghcr.io/rochacbruno/marmite:0.4.2 AS builder
 
 WORKDIR /app
 
 COPY . ./
 
-EXPOSE 3000
+RUN marmite . /site
 
-CMD ["--serve", "--bind", "0.0.0.0:3000"]
+FROM nginx:alpine
+
+COPY --from=builder /site /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
