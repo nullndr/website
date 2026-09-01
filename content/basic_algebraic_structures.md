@@ -247,7 +247,7 @@ An **integral domain** is a commutative ring $(R, +, \cdot)$ without zero diviso
 
 ## Division rings
 
-A **division ring** is a unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \{0\}, \cdot, 1)$ is a group.
+A **division ring** is a unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \\{0\\}, \cdot, 1)$ is a group.
 
 > The commutative property is not required, if it is present, then the structure becomes a [field](#fields).
 
@@ -255,4 +255,4 @@ A **division ring** is a unitary ring $(R, +, \cdot)$ such that every non-zero e
 
 ## Fields
 
-A **field** is a commutative unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \{0\}, \cdot, 1)$ is an abelian group.
+A **field** is a commutative unitary ring $(R, +, \cdot)$ such that every non-zero element in $R$ have an inverse under the $\cdot$ operation, meaning that $(R - \\{0\\}, \cdot, 1)$ is an abelian group.
