@@ -31,8 +31,11 @@ $$
 The square of a binomial is obtained by multiplying the binomial by itself:
 
 $$
-(a + b)^2 = a^2 + 2ab + b^2 \\
-(a - b)^2 = a^2 - 2ab + b^2 
+(a + b)^2 = a^2 + 2ab + b^2\\
+$$
+
+$$
+(a - b)^2 = a^2 - 2ab + b^2
 $$
 
 ## Square of trinomial
@@ -40,7 +43,7 @@ $$
 The same idea extends to three terms. The square contains the squares of each term together with twice each pairwise product:
 
 $$
-(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc 
+(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2ac + 2bc
 $$
 
 ## Cube of a binomial
@@ -48,8 +51,11 @@ $$
 Cubing a binomial gives:
 
 $$
-(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3 \\
-(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3 
+(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3
+$$
+
+$$
+(a - b)^3 = a^3 - 3a^2b + 3ab^2 - b^3
 $$
 
 ## Cube of a trinomial
@@ -81,7 +87,10 @@ This is possible because $i^2 = -1$.
 Unlike the sum of two squares over the real numbers, both the sum and the difference of two cubes admit factorizations in $\mathbb{R}$:
 
 $$
-a^3 + b^3 = (a + b)(a^2 − ab + b^2) \\
+a^3 + b^3 = (a + b)(a^2 − ab + b^2)\\
+$$
+
+$$
 a^3 - b^3 = (a - b)(a^2 + ab + b^2)
 $$
 
